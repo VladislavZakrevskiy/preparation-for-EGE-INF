@@ -301,15 +301,117 @@
 
 # --------------------------------------------------------------
 
-f = open('27B_2735.txt')
-n = int(f.readline())
-ox = 0
-oy = 0
-notxy = 0
+# f = open('27B_2735.txt')
+# n = int(f.readline())
+# ox = 0
+# oy = 0
+# notxy = 0
+# 
+# for i in range(n):
+#     x, y = map(int, f.readline().split())
+#     if y == 0: ox += 1
+#     if x == 0: oy += 1
+#     if x != 0 and y != 0: notxy += 1
+# print(ox*oy*notxy) # 846 7518420
 
-for i in range(n):
-    x, y = map(int, f.readline().split())
-    if y == 0: ox += 1
-    if x == 0: oy += 1
-    if x != 0 and y != 0: notxy += 1
-print(ox*oy*notxy) # 846 7518420
+# -------------------------------------------------------------
+
+# f = open('Динамические решения/27A_2720.txt')
+# n = int(f.readline())
+# k = k7 = 0
+# c = 0
+# for i in range(n):
+#     x = int(f.readline())
+#     if x % 7 == 0: c += k
+#     else: c += k7
+#
+#     k += 1
+#     if x % 7 == 0: k7 += 1
+# print(c) # 1209 13831740
+
+# ----------------------------------------------------------
+
+# f = open('Динамические решения/27A_2721.txt')
+# n = int(f.readline())
+# k = k65 = k13 = k5 = 0
+# c = 0
+# for i in range(n):
+#     x = int(f.readline())
+#     if x % 65 == 0: c += k
+#     elif x % 13 == 0: c += k5
+#     elif x % 5 == 0: c += k13
+#     else: c += k65
+#
+#     if x % 65 == 0: k65 += 1
+#     if x % 13 == 0: k13 += 1
+#     if x % 5 == 0: k5 += 1
+#     k += 1
+# print(c) # 168 2503584
+
+# ---------------------------------------------------------
+
+# f = open('Динамические решения/27B_2722.txt')
+# n = int(f.readline())
+# k5_0 = k5_1 = k_1 = k_0 = 0
+# c = 0
+# for i in range(n):
+#     x = int(f.readline())
+#     if x % 5 == 0 and x % 2 == 0: c += k_1 + k5_1
+#     if x % 5 == 0 and x % 2 != 0: c += k5_0 + k_0
+#     if x % 5 != 0 and x % 2 == 0: c += k5_1
+#     if x % 5 != 0 and x % 2 != 0: c += k5_0
+#
+#     if x % 5 == 0 and x % 2 == 0: k5_0 += 1
+#     if x % 5 == 0 and x % 2 != 0: k5_1 += 1
+#     if x % 5 != 0 and x % 2 == 0: k_0 += 1
+#     if x % 5 != 0 and x % 2 != 0: k_1 += 1
+# print(c) # 1056 8863690
+
+# ---------------------------------------------------------
+
+# f = open('Динамические решения/27B_2724.txt')
+# n = int(f.readline())
+# k = [0]*131
+# c = 0
+# for i in range(n):
+#     x = int(f.readline())
+#
+#     ost = 0 if x % 131 == 0 else 131 - x%131
+#     c += k[ost]
+#
+#     k[x%131] += 1
+# print(c) # 31 381543
+
+# ---------------------------------------------------
+
+# f = open('Динамические решения/27B_2733.txt')
+# n = int(f.readline())
+# k = [[0]*80 for i in range(2)]
+# c = 0
+# for i in range(n):
+#     x = int(f.readline())
+# 
+#     ost = 0 if x % 80 == 0 else 80 - x % 80
+#     koef = 0 if x > 50000 else k[0][ost]
+#     c += k[x > 50000][ost] + koef
+# 
+#     k[x > 50000][x % 80] += 1
+# print(c) # 48 465486
+
+# --------------------------------------
+
+# f = open('Динамические решения/27A_2726.txt')
+# n = int(f.readline())
+# m = -10**20
+# k = [-10**20]*3
+#
+# for i in range(n):
+#     x = int(f.readline())
+#     ost = 0 if x % 3 == 0 else 3-x%3
+#     m = max(m, x + k[ost])
+#
+#     k[x%3] = max(x, k[x%3])
+# print(m, k ) # 72384 133947
+
+# --------------------------------------------------------------
+

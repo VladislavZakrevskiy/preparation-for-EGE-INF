@@ -415,3 +415,337 @@
 
 # --------------------------------------------------------------
 
+# f = open('Подпоследовательности/27A_2900.txt')
+# n = int(f.readline())
+# s = 0
+# k = [10**20] * 1000
+# ms = 0
+#
+# for i in range(n):
+#     x = int(f.readline())
+#     s += x
+#     if s % 1000 == 0: ms = max(ms, s)
+#     s1 = s - k[s%1000]
+#     ms = max(ms, s1)
+#
+#     k[s%1000] = min(k[s%1000], s)
+# print(ms) # 259000 49763000
+
+# --------------------------------------------------
+
+# f = open('Подпоследовательности/27B_2901.txt')
+# n = int(f.readline())
+# s = 0
+# k = [0] * 666
+# c = 0
+#
+# for i in range(n):
+#     x = int(f.readline())
+#     s += x
+#     if s % 666 == 0: c += 1
+#     c += k[s%666]
+#
+#     k[s%666] += 1
+# print(c) # 5 75150
+
+# ------------------------------------------------------
+
+# f = open('Подпоследовательности/27B_2902.txt')
+# n = int(f.readline())
+# k = [0] * 11
+# k5 = 0
+# count = 0
+#
+# for i in range(n):
+#     x = int(f.readline())
+#     if x % 5 == 0: k5 += 1
+#     if k5 % 11 == 0: count += 1
+#     count += k[k5 % 11]
+#
+#     k[k5%11] += 1
+# print(count) # 588 4557520
+
+# ------------------------------------------------
+
+# f = open('Подпоследовательности/27A_2256.txt')
+# n = int(f.readline())
+# m = [10**20] * 3
+# k = 0
+# ms = 0
+# s = 0
+#
+# for i in range(n):
+#     x = int(f.readline())
+#     s += x
+#     if x % 5 == 0: k += 1
+#     if k % 3 == 0: ms = max(ms, s)
+#     s1 = s - m[k%3]
+#     ms = max(ms, s1)
+#
+#     m[k%3] = min(m[k%3], s)
+# print(ms) # 66453 69995639
+
+# ----------------------------------------------------------
+
+# f = open('Подпоследовательности/27B_1877.txt')
+# n = int(f.readline())
+# ms = 0
+# ml = 0
+# s = 0
+# m = [10**20]*89
+# l = [0]*89
+# for i in range(n):
+#     x = int(f.readline())
+#     s += x
+#     if s % 69 == 0 and s > ms: ms, ml = s, i+1
+#
+#     s1 = s - m[s % 69]
+#     l1 = (i + 1) - l[s % 69]
+#
+#     if s1 > ms or (s1 == ms and l1 < ml): ms, ml = s1, l1
+#     if s < m[s%69]: m[s%69], l[s%69] = s, i+1
+# print(ml) # 14 99989
+
+# ----------------------------------------------------
+
+# f = open('Подпоследовательности/27B_2904.txt')
+# n = int(f.readline())
+# ms = 10**20
+# ml = 0
+# s = 0
+# m = [-10**20]*2077
+# l = [0]*2077
+# for i in range(n):
+#     x = int(f.readline())
+#     s += x
+#     if s % 2077 == 0 and s < ms: ms, ml = s, i+1
+#
+#     s1 = s - m[s % 2077]
+#     l1 = (i + 1) - l[s % 2077]
+#
+#     if s1 < ms or (s1 == ms and l1 > ml): ms, ml = s1, l1
+#     if s > m[s % 2077]: m[s % 2077], l[s % 2077] = s, i+1
+# print(ml) # 28 8208
+
+# -------------------------------------------------------
+
+# f = open('Подпоследовательности/27B_2907.txt')
+# n = int(f.readline())
+# k, s, ms = 0, 0, 0
+# m = [10**20] * 30
+#
+# for i in range(n):
+#     x = int(f.readline())
+#     s += x
+#     if x > 0 and x % 2 == 0: k += 1
+#     if k % 30 == 0: ms = max(ms, s)
+#     s1 = s - m[k%30]
+#     ms = max(ms, s1)
+#
+#     m[k%30] = min(s, m[k%30])
+# print(ms) # 21365 286527
+
+# --------------------------------------------------
+
+# f = open('Подпоследовательности/27B_2363.txt')
+# n = int(f.readline())
+# q = []
+# s = 0
+# c = 0
+# m = [0]*117
+#
+# for i in range(5-1):
+#     x = int(f.readline())
+#     s += x
+#     q.append(s)
+#
+# for i in range(n-4):
+#     x = int(f.readline())
+#     s += x
+#     if s % 117 == 0: c += 1
+#     c += m[s%117]
+#
+#     m[q[0]%117] += 1
+#     q.pop(0)
+#     q.append(s)
+# print(c) # 34 42729434
+
+# ----------------------------------------------------------------
+
+# f = open('Подпоследовательности/27B_2908.txt')
+# n = int(f.readline())
+# q = []
+# s = 0
+# ms = -10**20
+# m = [10**20]*7
+# k7 = 0
+# for i in range(7-1):
+#     x = int(f.readline())
+#     s += x
+#     if x > 0 and x % 7 == 0: k7 += 1
+#     q.append([s, k7])
+#
+# for i in range(n-6):
+#     x = int(f.readline())
+#     s += x
+#     if x % 7 == 0 and x > 0: k7 += 1
+#     if k7 % 7 == 0: ms = max(ms, s)
+#     s1 = s - m[k7%7]
+#     ms = max(s1, ms)
+#
+#     s0, k0 = q[0]
+#     m[k0%7] = min(m[k0 % 7], s0)
+#     q.pop(0)
+#     q.append([s, k7])
+# print(ms) # 48451 290112
+
+# ----------------------------------------------------------
+
+# f = open('Сдвиги/27A_6318.txt')
+# n, m = map(int, f.readline().split())
+# a = []
+# for i in range(n):
+#     k = int(f.readline())
+#     a.append(k)
+#
+# s = mx = sum(a[:2*m + 1])
+# for i in range(m+1, n - m):
+#     s = s - a[i - m - 1] + a[i + m]
+#     mx = max(s, mx)
+# print(mx) # 81162 641474
+
+# ---------------------------------------------
+
+# f = open('Сдвиги/27B_6320.txt')
+# n, m = map(int, f.readline().split())
+# a = []
+#
+# for i in range(n):
+#     k = int(f.readline())
+#     a.append(k)
+# a = a*2
+#
+# s = mx = sum(a[:2*m+1])
+# for i in range(m+1, n*2 - m):
+#     s = s - a[i-m-1] + a[i+m]
+#     mx = max(mx, s)
+# print(mx) # 91573 1782723
+
+# --------------------------------------------------
+
+# f = open('Сдвиги/27B_4116.txt')
+# n, mk = map(int, f.readline().split())
+# mx = 0
+# a = [int(x) for x in f]
+# s = a[0]
+# start = end = 0
+#
+# while s + a[end+1] <= mk:
+#     s += a[end+1]
+#     end += 1
+#
+# mx = end - start + 1
+#
+# while end != n-1:
+#     s -= a[start]
+#     while end != n-1 and s + a[end+1] <= mk:
+#         s += a[end+1]
+#         end += 1
+#     start += 1
+#
+#     mx = max(mx, end - start + 1)
+# print(mx) # 38 14918
+
+# --------------------------------------------------
+
+# f = open('Сдвиги/27A_6321.txt')
+# n, v, m = map(int, f.readline().split())
+# a = []
+# for i in range(n):
+#     km, k = map(int, f.readline().split())
+#     c = k // v if k % v == 0 else k // v + 1
+#     a.append([km, c])
+# a.sort()
+# b = [0] * (a[-1][0] + 1)
+#
+# for el in a:
+#     km, c = el
+#     b[km] = c
+# s = mx = sum(b[:2*m+1])
+#
+# for i in range(m+1, a[-1][0] + 1-m):
+#     s = s - b[i-m-1] + b[i+m]
+#     if b[i] > 0: mx = max(mx, s)
+# print(mx) # 2504 3346
+
+# -------------------------------------------------
+
+# f = open('Сдвиги/27B_4630.txt')
+# n, k_par, m = map(int, f.readline().split())
+# a = []
+# for i in range(n):
+#     km, k = map(int, f.readline().split())
+#     km = km % k_par
+#     c = k // 9 if k % 9 == 0 else k // 9 + 1
+#     a.append([km, c])
+#
+# b = [0]*k_par
+# for el in a:
+#     km, c = el
+#     b[km] = c
+#
+# b = b*2
+# s = mx = sum(b[:2*m+1])
+# for i in range(m+1, k_par + m):
+#     s = s - b[i - m - 1] + b[i+m]
+#     if b[i] > 0: mx = max(mx, s)
+# print(mx) # 409 95850
+
+# ------------------------------------------------
+
+# f = open('Сдвиги/27B_5644.txt')
+# n = int(f.readline())
+# a = [int(x) for x in f]
+# sm = sum(a)
+# s = 0
+# b = []
+# for i in range(n):
+#     s += a[i]
+#     b.append(s)
+# 
+# s = 0
+# for i in range(n):
+#     s += a[i] * i
+# 
+# mx = s
+# for i in range(1, n):
+#     s = s + b[i-1] - (sm - b[i-1])
+#     mx = max(mx, s)
+# print(mx) # 849014 44029481068414
+
+# ----------------------------------------------
+
+# f = open('Сдвиги/27B_6323.txt')
+# n, m = map(int, f.readline().split())
+# a = []
+# sm = 0
+# for i in range(n):
+#     km, k = map(int, f.readline().split())
+#     c = k // m if k % m == 0 else k // m + 1
+#     sm += c
+#     a.append([km, c, sm])
+# s = 0
+# for i in range(n):
+#     s += (a[i][0] - a[0][0]) * a[i][1]
+# mx = s
+# d_price = 0
+#
+# for i in range(1, n):
+#     d_price += a[i-1][1]
+#     r = a[i][0] - a[i-1][0]
+#     s = s + r*d_price - r*(sm - d_price)
+#     mx = min(mx, s)
+# print(mx) # 71028 2999492166115
+
+# ---------------------------------------------------
+

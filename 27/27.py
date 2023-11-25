@@ -747,5 +747,268 @@
 #     mx = min(mx, s)
 # print(mx) # 71028 2999492166115
 
-# ---------------------------------------------------
+# ------------------------------------------------
 
+# f = open('Частичные суммы/27-B_23.txt')
+# n = int(f.readline())
+# s = [0]
+# for i in range(n):
+#     pair = [int(x) for x in f.readline().split()]
+#     s = [a+b for a in s for b in pair]
+#     s = {x%3: x for x in sorted(s)}.values()
+# print(max(x for x in s if x%3!= 0)) # 127127 399762080
+
+# -----------------------------------------------------------------
+
+# f = open('Частичные суммы/27-B_637.txt')
+# n = int(f.readline())
+# s = [0]
+# for i in range(n):
+#     pair = [int(x) for x in f.readline().split()]
+#     s = [a+b for a in s for b in pair]
+#     s = {x%10: x for x in sorted(s)}.values()
+# print(max(x for x in s if x % 10 != 5)) # 13159 40799380
+
+# ------------------------------------------------------------------
+
+# f = open('Частичные суммы/27-A_814.txt')
+# n = int(f.readline())
+# s = [0]
+# for i in range(n):
+#     pair = [int(x) for x in f.readline().split()]
+#     s = [a+b for a in s for b in pair]
+#     s = {x % 5: x for x in sorted(s, reverse=1)}.values()
+# print(min(x for x in s if x % 5 != 0)) # 214 334771
+
+# ----------------------------------------------------------------
+
+# f = open('Частичные суммы/27B_682.txt')
+# n = int(f.readline())
+# s = [0]
+# for i in range(n):
+#     troyka = [int(x) for x in f.readline().split()]
+#     troyka = [troyka[0] + troyka[1], troyka[0] + troyka[2], troyka[1] + troyka[2]]
+#     s = [a+b for a in s for b in troyka]
+#     s = {x % 4: x for x in sorted(s)}.values()
+# print(max(x for x in s if x % 4 == 0)) # 18380 58701760
+
+# ------------------------------------------------------
+
+# f = open('Частичные суммы/27B_2481.txt')
+# n = int(f.readline())
+# s = [0]
+# for i in range(n):
+#     x = int(f.readline())
+#     s += [a+x for a in s] + [x]
+#     s = list({x % 17: x for x in sorted(s)}.values())
+# print(max(x for x in s if x % 17 == 0)) # 42143 248359970
+
+# --------------------------------------------------------
+
+# f = open('Частичные суммы/27B_2481.txt')
+# n = int(f.readline())
+# s = [0]
+# k = [0]*10
+# for i in range(n):
+#     x = int(f.readline())
+#     s += [a+x for a in s] + [x]
+#     for x in sorted(s):
+#         k[x%10] += 1
+# 
+# print(sorted(k)) # 42143 248359970
+
+# ---------------------------------------------------------------------
+
+# f = open('ЕГЭ(номера)/27-B_11485.txt')
+# n = int(f.readline())
+# A = []
+# B = []
+# for i in range(n):
+#     x = int(f.readline())
+#     A.append(x)
+#
+# for i in range(n):
+#     x = int(f.readline())
+#     B.append(x)
+# mn = 10**20
+#
+# i = 0
+# j = 0
+# while i < n and j < n:
+#     mn = min(mn, abs(A[i] - B[j]))
+#     if A[i] < B[j]: i += 1
+#     else: j += 1
+#
+# print(mn) # 90 34
+
+# -------------------------------------------------------------------------
+
+# f = open('ЕГЭ(номера)/27-B_10727.txt')
+# n = int(f.readline())
+# m = [0]*n
+# count = 0
+# k = 0
+# for i in range(n):
+#     x = int(f.readline())
+#     if x > 0: k += 1
+#     elif x < 0: k -= 1
+#     if k == 0: count += 1
+#     if k > 0: count += m[k]
+#     else: count += m[k]
+#
+#     m[k] += 1
+# print(count) # 21661 13385023015
+# a = [int(x) for x in f]
+# count = 0
+# for i in range(n):
+#     k = 0
+#     for j in range(i, n):
+#         if a[j] > 0: k += 1
+#         elif a[j] < 0: k -= 1
+#         if k == 0: count += 1
+# print(count) # 21661
+
+# ------------------------------------------------
+
+# f = open('ЕГЭ(номера)/27_B_10108.txt')
+# k = int(f.readline())
+# n = int(f.readline())
+# m = max_back = max_p_back = float('-inf')
+# a = [int(x) for x in f]
+# for i in range(2*k, n):
+#     max_back = max(max_back, a[i - 2*k])
+#     max_p_back = max(max_p_back, max_back + a[i - k])
+#     m = max(m, max_p_back + a[i])
+# print(m) # 189536 17210
+
+# -------------------------------------------------------
+
+# f = open('ЕГЭ(номера)/27_A_9848.txt')
+# k = int(f.readline())
+# n = int(f.readline())
+# q = []
+# c = 0
+# s = 0
+# mxs = 0
+
+# --------------------------------------------------------
+
+# f = open('ЕГЭ(номера)/27_B_9755.txt')
+# k = int(f.readline())
+# n = int(f.readline())
+# mn = min_back = min_p_back = float('inf')
+# a = [int(x) for x in f]
+# for i in range(2*k, n):
+#     min_back = min(min_back, a[i - 2*k])
+#     min_p_back = min(min_p_back,min_back + a[i-k])
+#     mn = min(mn, min_p_back + a[i])
+# print(mn) # 166998 15102
+
+# --------------------------------------------------
+
+# f = open('ЕГЭ(номера)/27_A_9555.txt')
+# n, k = map(int, f.readline().split())
+# m = [0]*111
+# q = []
+# s = 0
+# c = 0
+#
+# for i in range(k-1):
+#     x = int(f.readline())
+#     s += x
+#     q.append(s)
+# for i in range(n-k+1):
+#     x = int(f.readline())
+#     s += x
+#     if s % 111 == 0: c += 1
+#     c += m[s%111]
+#
+#     m[q[0]%111] += 1
+#     q.pop(0)
+#     q.append(s)
+# print(c) # 4398
+
+# -----------------------------------------------------------
+
+# f = open('ЕГЭ(номера)/27A_9078.txt')
+# n, d, t = map(int, f.readline().split())
+# mx = 0
+# m = [0]*d
+
+# -----------------------------------------------------------
+
+# f = open('ЕГЭ(номера)/27_A_8962.txt')
+# k = int(f.readline())
+# n = int(f.readline())
+#
+# a = [int(x) for x in f]
+# mx = max(a[:k])
+# mx_k = -1
+# c_z = []
+#
+# for i in range(k, n):
+#     mx_k = max(mx_k, a[i-k])
+#     if mx < a[i]:
+#         c_z.append(a[i] + mx)
+#         mx = a[i]
+# print(max(c_z))
+
+# ----------------------------------------------------------
+
+# f = open('ЕГЭ(номера)/27A_8650.txt')
+# n = int(f.readline())
+# k = int(f.readline())
+# c = 0
+# k0 = 0
+# m = [0]*n*2
+# q = []
+#
+# for i in range(k-1):
+#     x = int(f.readline())
+#     if x % 2 == 0: k0 += 1
+#     else: k0 -= 1
+#     q.append(k0)
+#
+# for i in range(n-k+1):
+#     x = int(f.readline())
+#     if x % 2 == 0: k0 += 1
+#     else: k0 -= 1
+#     if k0 == 0: c += 1
+#     c += m[k0]
+#
+#     m[q[0]] += 1
+#     q.pop(0)
+#     q.append(k0)
+# print(c)
+
+# ------------------------------------------------------------
+
+# f = open('ЕГЭ(номера)/27-A_8617.txt')
+# n = int(f.readline())
+# s = [(0,0,0)]
+# for i in range(n):
+#     a, b = map(int, f.readline().split())
+#     new_s = [(min(a, b), max(a, b), a + b)]
+#     if a % 2 == 0:
+#         for mn_s, mx_s, all_s in s:
+#             new_s.append((mn_s + min(a, b), mx_s + max(a, b), all_s + a + b))
+#         s += new_s
+#         s = list({(mn_s%2, mx_s%2, all_s % 16): (mn_s, mx_s, all_s) for mn_s, mx_s, all_s in sorted(s)}.values())
+# maxxxxxx = -10**20
+# for mn_s, mx_s, all_s in s:
+#     if mn_s%2 == 0 and mx_s % 2 != 0 and all_s % 16 == 15:
+#         maxxxxxx = max(maxxxxxx, all_s)
+# print(maxxxxxx)
+
+# ----------------------------------------------------------------
+
+# f = open('ЕГЭ(номера)/27_B_8513.txt')
+# k = int(f.readline())
+# n = int(f.readline())
+# a = [int(x) for x in f]
+# mx = max_back = 0
+# for i in range(k, n):
+#     max_back = max(max_back, a[i-k])
+#     mx = max(mx, max_back + a[i])
+#
+# print(mx) # 1219 2090920

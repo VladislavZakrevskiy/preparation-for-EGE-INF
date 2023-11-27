@@ -1,5 +1,4 @@
 # 1 ------------------------------------------------------------
-# 37
 
 # 2 ------------------------------------------------------------
 # print('z x y F')
@@ -8,12 +7,9 @@
 #         for z in range(2):
 #             F = (y <= z) and (not(z and x))
 #             if F: print(z, x, y , F)
-
 # 3 ------------------------------------------------------------
-# 6844,875
 
 # 4 ------------------------------------------------------------
-# 22
 
 # 5 ------------------------------------------------------------
 # def f(x):
@@ -28,7 +24,6 @@
 #     if (N - f(N)) == 979:
 #         print(N)
 #         break
-
 # 6 ------------------------------------------------------------
 
 # 7 ------------------------------------------------------------
@@ -68,7 +63,6 @@
 #     b = 12345 + x
 #     if (a+b)%13 == 0:
 #         print(x, (a+b)//13)
-
 # 15 ------------------------------------------------------------
 # def DEL(n,m):
 #     return n%m == 0
@@ -113,11 +107,8 @@
 # print('19) ', [s for s in range(15, 100) if win(15, s, 2)])
 # # print('20) ', [s for s in range(15, 300) if win(15, s, 3) and not win(15, s, 1)])
 # print('21) ', [s for s in range(16, 50) if win(15, s, 2) and win(15, s ,4)])
-
 # Какая-то хуйня
-
 # 22 ------------------------------------------------------------
-
 
 # 23 ------------------------------------------------------------
 # def f(start, end):
@@ -149,24 +140,22 @@
 # for i in range(650000, 700000):
 #     if F(i) % 37 == 23: arr.append((i, F(i)))
 # print(arr)
-
 # 26 ------------------------------------------------------------
 # Очередная поебень от Джобса
 # 27 ------------------------------------------------------------
-
-f = open('27-B_1258.txt')
-n = int(f.readline())
-s = [(0,0,0)]
-for i in range(n):
-    a, b = map(int, f.readline().split())
-    new_sum = [(min(a, b), max(a, b), a + b)]
-    if a % 2 != 0:
-        for mn, mx, ms in s:
-            new_sum += [(mn + min(a, b), mx + max(a, b), ms + a + b)]
-        s += new_sum
-        s = list({(mn%2, mx%2): (mn, mx, ms) for mn, mx, ms in sorted(s)}.values())
-maxx  = -10**20
-for mn, mx, ms in s:
-    if mn % 2 == 0 and mx % 2 != 0:
-        maxx = max(maxx, ms)
-print(maxx) # 44067 301651117
+# f = open('27-B_1258.txt')
+# n = int(f.readline())
+# s = [(0,0,0)]
+# for i in range(n):
+#     a, b = map(int, f.readline().split())
+#     new_sum = [(min(a, b), max(a, b), a + b)]
+#     if a % 2 != 0:
+#         for mn, mx, ms in s:
+#             new_sum += [(mn + min(a, b), mx + max(a, b), ms + a + b)]
+#         s += new_sum
+#         s = list({(mn%2, mx%2): (mn, mx, ms) for mn, mx, ms in sorted(s)}.values())
+# maxx  = -10**20
+# for mn, mx, ms in s:
+#     if mn % 2 == 0 and mx % 2 != 0:
+#         maxx = max(maxx, ms)
+# print(maxx) # 44067 301651117

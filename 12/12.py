@@ -71,20 +71,137 @@
 #   КОНЕЦ ЕСЛИ
 # КОНЕЦ ПОКА
 # КОНЕЦ
+# def f(s):
+#     while '78' in s or '888' in s:
+#         if '78' in s:
+#             s = s.replace('78', '8', 1)
+#         if '888' in s:
+#             s = s.replace('888', '7', 1)
+#     return s
+#
+# cnt = 0
+# for n in range(1000, 2001):
+#     s = '7' + '8' * n
+#     ans = f(s)
+#     summ = sum(map(int, ans))
+#     if summ == 16:
+#         cnt += 1
+# print(cnt)
+# -----------------------------------------------------
+# def f(s):
+#     while '74' in s or '75' in s:
+#         if '75' in s:
+#             s = s.replace('75', '744', 1)
+#         else: s = s.replace('74', '44', 1)
+#     return s
+# max_4 = 0
+# for i in range(4, 1000):
+#     s = 20 * '4' + 15 * '75'
+#     res = f(s)
+#     if res.count('4') == 65:
+#         print(i)
+# print(max_4)
+# -----------------------------------------------------
+# def f(s):
+#     while '555' in s or '111' in s:
+#         if '555' in s:
+#             s = s.replace('555', '1', 1)
+#         else: s = s.replace('111', '5', 1)
+#     return s
+# print(f(874 * '5'))
+# -----------------------------------------------------
+# def f(s):
+#     while '00' not in s:
+#         s = s.replace('01', '220', 1)
+#         s = s.replace('02', '1013', 1)
+#         s = s.replace('03', '120', 1)
+#     return s
+# print(len('0222223330'))
+# -----------------------------------------------------
+# def f(s):
+#     while '52' in s or '2222' in s or '1122' in s:
+#         if '52' in s:
+#             s = s.replace('52', '11', 1)
+#         if '2222' in s:
+#             s = s.replace('2222', '5', 1)
+#         if '1122' in s:
+#             s = s.replace('1122', '25', 1)
+#     return s
+# for i in range(4, 10000):
+#     s = '5' + i*'2'
+#     res = f(s)
+#     one = res.count('1')
+#     two = res.count('2') * 2
+#     five = res.count('5') * 5
+#     sum = one + two + five
+#     if sum % 10 == 7:
+#         print(i, sum)
+# -----------------------------------------------------
+# def f(s):
+#     while '39' in s or '35' in s or '555' in s:
+#         if '39' in s:
+#             s = s.replace('39', '55', 1)
+#         if '35' in s:
+#             s = s.replace('35', '9', 1)
+#         if '555' in s:
+#             s = s.replace('555', '3', 1)
+#     return s
+# for i in range(1000):
+#     s = '3' + i*'9' + i*'5'
+#     res = f(s)
+#     three = res.count('3') * 3
+#     five = res.count('5') * 5
+#     nine = res.count('9') * 9
+#     sum = three+five+nine
+#     if sum % len(res) == i:
+#         print(i)
+# -----------------------------------------------------
+# def f(s):
+#     while '25' in s or '355' in s or '555' in s:
+#         if '25' in s:
+#             s = s.replace('25', '5', 1)
+#         if '355' in s:
+#             s = s.replace('355', '52', 1)
+#         if '555' in s:
+#             s = s.replace('555', '3', 1)
+#     return s
+# for i in range(4, 10000):
+#     s = '2' + i*'5'
+#     res = f(s)
+#     if res.count('3') == 3: print(i)
+# -----------------------------------------------------
+# def f(s):
+#     while '01' in s or '02' in s or '03' in s:
+#         s = s.replace('01', '30', 1)
+#         s = s.replace('02', '3103', 1)
+#         s = s.replace('03', '1201', 1)
+#     return s
+# print(f('03'))
+# -----------------------------------------------------
 
-def f(s):
-    while '78' in s or '888' in s:
-        if '78' in s:
-            s = s.replace('78', '8', 1)
-        if '888' in s:
-            s = s.replace('888', '7', 1)
-    return s
 
-cnt = 0
-for n in range(1000, 2001):
-    s = '7' + '8' * n
-    ans = f(s)
-    summ = sum(map(int, ans))
-    if summ == 16:
-        cnt += 1
-print(cnt)
+
+# -----------------------------------------------------
+
+
+
+# -----------------------------------------------------
+
+
+
+# -----------------------------------------------------
+
+
+
+# -----------------------------------------------------
+
+
+
+# -----------------------------------------------------
+
+
+
+# -----------------------------------------------------
+
+
+

@@ -1,3 +1,6 @@
+import string
+from itertools import *
+
 # (С. Чайкин) Все слова из одиннадцати букв,  составленные из букв
 # русского алфавита, записаны в обратном алфавитном порядке и пронумерованы.
 # Ниже приведено начало списка.
@@ -317,3 +320,151 @@
 #
 # #Ответ - суммарное количество цепочек, не начинающихся с нуля
 # print(sum(f(1, i=='A', frozenset(i)) for i in '123456789ABC'))
+
+# ---------------------------------------------------------------
+# c = 0
+# for word in product('0123456789ABCD', repeat=5):
+#     s = ''.join(word)
+#     if s[0] != '0' and len(set(s)) == 2 and (s[-1] == '0' or s[-1] == '3'):
+#         c += 1
+# print(c)
+# ---------------------------------------------------------------
+# n = 0
+# sogl = ['П', 'Р', 'В', 'Ч', 'К']
+# for word in product('АВИКРПЧЫ', repeat=5 ):
+#     n += 1
+#     if n % 5 != 0 and len(set(word)) == 5 and word[0] in sogl and word[1] in sogl and word[2] in sogl and word[3] in sogl and word[4] in sogl:
+#         print(n - n//5)
+# ---------------------------------------------------------------
+# arr1 = []
+# arr2 = []
+# for word in product('КОНЕЦ', repeat=5):
+#     arr1.append(''.join(word))
+# c = 0
+# for word in product('ДРАКОН', repeat=5):
+#     s = ''.join(word)
+#     if s in arr1:
+#         arr1.remove(s)
+#     else: arr2.append(s)
+# print(len(arr1) + len(arr2))
+# ---------------------------------------------------------------
+# c = 0
+# for word in product('КАЙФ', repeat=4):
+#     s = ''.join(word)
+#     if s[-1] != 'Й' and 'КФ' not in s:
+#         for let in s:
+#             if s.count(let) > 1: break
+#         else: c += 1
+# print(c)
+# ---------------------------------------------------------------
+# c = 0
+# for word in permutations('КИДАЛА', r=5):
+#     s = ''.join(word)
+#     for i in range(len(s)-1):
+#         l_0 = s[i]
+#         l_1 = s[i+1]
+#         if l_0 == l_1: break
+#     else: c += 1
+# print(c)
+# ---------------------------------------------------------------
+# c = 0
+# for word in product('012345678', repeat=9):
+#     s = ''.join(word)
+#     if s.count('0') == 0:
+#         for i in range(len(s)-1):
+#             if int(s[i]) % 2 == int(s[i+1]) % 2: break
+#             if s.count(s[i]) > 3: break
+#             if s.count(s[i+1]) > 3: break
+#         else: c += 1
+# print(c)
+# ---------------------------------------------------------------
+# c = 0
+# for word in permutations('ПРОСТО', r=6):
+#     s = ''.join(word)
+#     if 'ОО' not in s: c += 1
+# print(c / 2)
+# ---------------------------------------------------------------
+# c = 0
+# for word in product('ЯЩЕР', repeat=5):
+#     s = ''.join(word)
+#     if s.count('Е') <= 3 and s.count('Е') >= 1: c += 1
+# print(c)
+# ---------------------------------------------------------------
+# n = 0
+# for word in product('СПОЛКЙЕДА', repeat=6):
+#     if n % 2 == 0 and word[0] == 'К' and word.count('С') == 0 and word.count('Е') == 0 and word.count('Й') >= 2:
+#         print(n, word)
+#     n += 1
+# ----------------------------------------------------------------
+# c = 0
+# for word in product('0123456789ABCDEF', repeat=3):
+#     if word[0] != '0' and int(word[0], 16) > int(word[1], 16) and int(word[1], 16) > int(word[2], 16): c += 1
+# for word in product('0123456789ABCDEF', repeat=5):
+#     if word[0] != '0' and int(word[0], 16) > int(word[1], 16) and int(word[1], 16) > int(word[2], 16) and int(word[2], 16) > int(word[3], 16) and int(word[3], 16) > int(word[4], 16):
+#         c += 1
+# print(c)
+# ---------------------------------------------------------------
+# c = 1
+# for word in product(sorted(list('ГИРЛЯНДА')), repeat=6):
+#     if c % 2 == 0 and word[0] != 'Я' and word.count('Д') == 3:
+#         print(c)
+#     c += 1
+# ---------------------------------------------------------------
+# c = 0
+# for word in product('01234567', repeat=7):
+#     if word[0] == '0': continue
+#     chet = (word.count('0') + word.count('2') + word.count('4') + word.count('6')) == 2
+#     is_7 = True
+#     for i in range(len(word)-1):
+#         l_0 = word[i]
+#         l_1 = word[i+1]
+#         if l_0 == '7' and l_1 in '1357':
+#             is_7 = False
+#         if l_1 == '7' and l_0 in '1357':
+#             is_7 = False
+#     if is_7 and chet: c += 1
+# print(c)
+# ---------------------------------------------------------------
+# n = 0
+# for word in product(sorted(list('ГОНДУБШ')), repeat=6):
+#     n += 1
+#     if n % 2 == 1 and word[0] != 'Б' and word.count('У') == 0 and word.count('Н') >= 2:
+#         print(n,word)
+# ---------------------------------------------------------------
+# c = 0
+# for word in product('0123456789ABC', repeat=6):
+#     if word[0] == '0': continue
+#     if word.count('5') <= 1:
+#         for i in range(len(word)-1):
+#             l_0 = word[i]
+#             l_1 = word[i+1]
+#             if l_0 in '13579B' and l_1 in '13579B': break
+#         else: c += 1
+# print(c)
+# ---------------------------------------------------------------
+# c = 0
+# for word in permutations('АССЕМБЛЕР', r=9):
+#     s = ''.join(word)
+#     glas = 0
+#     for i in range(len(s)):
+#         if s[i] in 'АЕ':
+#             glas += i + 1
+#     if glas == 9: c += 1
+# print(c)
+# ---------------------------------------------------------------
+# c = 0
+# for word in permutations('ДЖАВАСКРИПТ', r=11):
+#     s = ''.join(word)
+#     glas = 0
+#     for i in range(len(s)):
+#         if s[i] in 'АИ':
+#             glas += i + 1
+#     if glas == 11: c += 1
+# print(c / 2)
+# ---------------------------------------------------------------
+
+
+
+
+
+

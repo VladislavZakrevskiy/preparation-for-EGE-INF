@@ -1012,3 +1012,233 @@
 #     mx = max(mx, max_back + a[i])
 #
 # print(mx) # 1219 2090920
+
+# Гипер повторение ---------------------------------------------------
+
+# f = open('Динамические решения/27B_2720.txt')
+# N = int(f.readline())
+# a = [int(x) for x in f]
+# k7 = k = 0
+# c = 0
+# for i in range(N):
+#     el = a[i]
+#     if el % 7 == 0: c += k
+#     else: c += k7
+#
+#     if el % 7 == 0: k7 += 1
+#     k += 1
+# print(c)
+
+# --------------------------------------------------------------------
+
+# f = open('Динамические решения/27A_2721.txt')
+# N = int(f.readline())
+# a = [int(x) for x in f]
+# k = k13 = k5 = k65 = 0
+# c = 0
+#
+# for i in range(N):
+#     el = a[i]
+#     if el % 65 == 0: c += k
+#     elif el % 13 == 0: c += k5
+#     elif el % 5 == 0: c += k13
+#     else: c += k65
+#
+#
+#     if el % 65 == 0: k65 += 1
+#     if el % 5 == 0: k5 += 1
+#     if el % 13 == 0: k13 += 1
+#     k += 1
+# print(c)
+
+# ---------------------------------------------------------
+
+# f = open('Динамические решения/27A_2722.txt')
+# N = int(f.readline())
+#
+# k5_0 = k5_1 = k_1 = k_0 = k = 0
+# c = 0
+#
+# for i in range(N):
+#     x = int(f.readline())
+#     if x % 5 == 0 and x % 2 == 0: c += k_1 + k5_1
+#     if x % 5 == 0 and x % 2 != 0: c += k5_0 + k_0
+#     if x % 5 != 0 and x % 2 == 0: c += k5_1
+#     if x % 5 != 0 and x % 2 != 0: c += k5_0
+#
+#     if x % 5 == 0 and x % 2 == 0: k5_0 += 1
+#     if x % 5 == 0 and x % 2 != 0: k5_1 += 1
+#     if x % 5 != 0 and x % 2 == 0: k_0 += 1
+#     if x % 5 != 0 and x % 2 != 0: k_1 += 1
+# print(c)
+
+# -----------------------------------------------------------
+
+# f = open('Динамические решения/27A_2724.txt')
+# N = int(f.readline())
+# a = [int(x) for x in f]
+#
+# k_131 = [0]*131
+# c = 0
+# for i in range(N):
+#     x = a[i]
+#     ost = 0 if x % 131 == 0 else 131 - x%131
+#     c += k_131[ost]
+#
+#     k_131[x%131] += 1
+# print(c)
+
+# --------------------------------------------------------------
+
+# f = open('Динамические решения/27A_2733.txt')
+# N = int(f.readline())
+# b = 50_000
+# k_80 = [[0]*80 for i in range(2)]
+# c = 0
+#
+# for i in range(N):
+#     x = int(f.readline())
+#     ost = 0 if x % 80 == 0 else 80 - x%80
+#     is_b = x > b
+#     if x > b: c += k_80[0][ost] + k_80[1][ost]
+#     else: c += k_80[1][ost]
+#
+#     k_80[is_b][x%80] += 1
+# print(c)
+
+# -------------------------------------------------------------
+
+# f = open('Динамические решения/27B_2726.txt')
+# N = int(f.readline())
+# a = [int(x) for x in f]
+# c = 0
+# mx_odd = -4720194768966
+# mx_even = -48729467297
+# mx = -38790848902
+#
+# for i in range(N):
+#     x = a[i]
+#     if x % 2 == 0: mx_even = max(mx_even, x)
+#     else: mx_odd = max(mx_odd, x)
+#
+#     if x % 2 == 0: mx = max(mx, x + mx_odd)
+#     else: mx = max(mx, x + mx_even)
+# print(mx)
+
+# -------------------------------------------------------------
+
+# f = open('Динамические решения/27B_2727.txt')
+# N = int(f.readline())
+# a = [int(x) for x in f]
+# mn_31 = min([x for x in a if x % 31 == 0])
+# mn_0 = min([x for x in a if x % 31 != 0])
+# mn = 5629468294
+# for i in range(N):
+#     x = a[i]
+#     if x % 31 != 0: mn = min(mn, x * mn_31)
+#     else: mn = min(x * mn_31, mn, x * mn_0)
+# print(mn)
+
+# ---------------------------------------------------------------
+
+# f = open('Динамические решения/27B_2728.txt')
+# N = int(f.readline())
+# a = [int(x) for x in f]
+# mx_23_0, mx_23_1, mx_0_1, mx_0_0 = [],[],[],[]
+# mx = -4729094802
+#
+# for i in range(N):
+#     x = a[i]
+#     if x % 23 == 0 and x % 2 == 0: mx_23_0 += [x]
+#     if x % 23 == 0 and x % 2 != 0: mx_23_1 += [x]
+#     if x % 23 != 0 and x % 2 == 0: mx_0_0 += [x]
+#     if x % 23 != 0 and x % 2 != 0: mx_0_1 += [x]
+# mx_23_0.sort()
+# mx_23_1.sort()
+# mx_0_1.sort()
+# mx_0_0.sort()
+#
+# b = mx_0_0[-2:] + mx_0_1[-2:] + mx_23_0[-2:] + mx_23_1[-2:]
+# for i in range(len(b)):
+#     for j in range(i+1, len(b)):
+#         if (b[i] + b[j]) % 2 == 0 and ((b[i] % 23 == 0) + (b[j] % 23 == 0)) >= 1:
+#             mx = max(mx, b[i] + b[j])
+# print(mx)
+
+# -----------------------------------------------------------
+
+# f = open('Динамические решения/27B_2757.txt')
+# N = int(f.readline())
+# k = 8
+# a = [int(x) for x in f]
+# c = 0
+# k_23 = k_0 = 0
+#
+# for i in range(k, N):
+#     if a[i] % 23 == 0: c += k_23 + k_0
+#     if a[i] % 23 != 0: c += k_23
+#
+#     if a[i - k] % 23 == 0: k_23 += 1
+#     if a[i - k] % 23 != 0: k_0 += 1
+# print(c)
+
+# --------------------------------------------------------------
+
+# f = open('Динамические решения/27B_2751.txt')
+# N = int(f.readline())
+# a = [int(x) for x in f]
+# k = 4
+# k_13_0 = k_13_1 = k_0_0 = k_0_1 = 0
+# c = 0
+#
+# for i in range(k, N):
+#     if a[i] % 13 == 0 and a[i] % 2 == 0: c += k_13_1 + k_0_1
+#     if a[i] % 13 == 0 and a[i] % 2 != 0: c += k_13_0 + k_0_0
+#     if a[i] % 13 != 0 and a[i] % 2 == 0: c += k_13_1
+#     if a[i] % 13 != 0 and a[i] % 2 != 0: c += k_13_0
+#
+#     if a[i - k] % 13 == 0 and a[i - k] % 2 == 0: k_13_0 += 1
+#     if a[i - k] % 13 == 0 and a[i - k] % 2 != 0: k_13_1 += 1
+#     if a[i - k] % 13 != 0 and a[i - k] % 2 == 0: k_0_0 += 1
+#     if a[i - k] % 13 != 0 and a[i - k] % 2 != 0: k_0_1 += 1
+# print(c)
+
+# ---------------------------------------------------------------------
+
+# f = open('Динамические решения/27B_2752.txt')
+# N = int(f.readline())
+# k = 5
+# a = [int(x) for x in f]
+# k_0 = k_1 = k_2 = k_3 = k_4 = k_5 = k_6 = k_7 = k_8 = k_9 = 0
+# c = 0
+#
+# for i in range(k, N):
+#     if a[i] % 10 == 1: c += k_3
+#     if a[i] % 10 == 3: c += k_1
+#     if a[i] % 10 == 7: c += k_9
+#     if a[i] % 10 == 9: c += k_7
+#
+#     if a[i - k] % 10 == 1: k_1 += 1
+#     if a[i - k] % 10 == 3: k_3 += 1
+#     if a[i - k] % 10 == 7: k_7 += 1
+#     if a[i - k] % 10 == 9: k_9 += 1
+# print(c)
+
+# ---------------------------------------------------------
+
+# f = open('Динамические решения/27A_2753.txt')
+# N = int(f.readline())
+# a = []
+# c = 0
+#
+# for i in range(N):
+#     x = int(f.readline())
+#     for y in a:
+#         if (x+y)%8 != 0: c += 1
+#     a += [x]
+#     if len(a) > 7: a.pop(0)
+# print(c)
+
+# -------------------------------------------------------------
+
+f = open('Динамические решения/27A_2761.txt')

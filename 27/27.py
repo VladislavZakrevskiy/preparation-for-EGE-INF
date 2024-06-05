@@ -1239,6 +1239,47 @@
 #     if len(a) > 7: a.pop(0)
 # print(c)
 
-# -------------------------------------------------------------
+# Демоверсия -------------------------------------------------------------
 
-f = open('Динамические решения/27A_2761.txt')
+# f = open('ЕГЭ(номера)/27_B_10108.txt')
+# K = int(f.readline())
+# N = int(f.readline())
+# a = [int(x) for x in f]
+#
+# max_a_1 = max_sum_1 = max_sum_2 = 0
+#
+# for i in range(2 * K, N):
+#     max_a_1 = max(max_a_1, a[i - 2*K])
+#     max_sum_1 = max(max_sum_1, max_a_1 + a[i - K])
+#     max_sum_2 = max(max_sum_2, max_sum_1 + a[i])
+# print(max_sum_2)
+
+# ЕГКР от 16дек --------------------------------------------------------
+
+# f = open('ЕГЭ(номера)/27-B_12257.txt')
+# N = int(f.readline())
+# K = 113
+# a = [int(x) for x in f]
+# s = ms = ml = 0
+# k = [10**20] * K
+# l = [0] * K
+#
+#
+# for i in range(N):
+#     s += a[i]
+#
+#     if s % K == 0:
+#         if s > ms:
+#             ms, ml = s, i+1
+#
+#     s1 = s - k[s % K]
+#     l1 = (i+1) - l[s % K]
+#     if ms < s1:
+#         ms, ml = s1, l1
+#
+#     if s < k[s % K]: k[s % K], l[s % K] = s, i + 1
+# print(ml)
+
+# --------------------------------------------
+
+# f = opes)
